@@ -3,12 +3,12 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-const connectDB = require("./config/db");
+const connectDB = require("./src/config/db");
 
-const scrapeRoutes = require("./routes/scrapeRoutes");
+const scrapeRoutes = require("./src/routes/scrapeRoutes");
 
 const scrapeHackerNews = require(
-  "./services/scraperService"
+  "./src/services/scraperService"
 );
 
 const app = express();
