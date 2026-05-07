@@ -5,6 +5,8 @@ const cors = require("cors");
 
 const connectDB = require("./config/db");
 
+const scrapeRoutes = require("./routes/scrapeRoutes");
+
 const app = express();
 
 connectDB();
@@ -15,6 +17,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("API Running");
 });
+
+app.use("/api/scrape", scrapeRoutes);
 
 const PORT = process.env.PORT || 5000;
 
